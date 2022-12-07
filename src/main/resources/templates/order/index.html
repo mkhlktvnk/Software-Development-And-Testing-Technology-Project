@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <th:block th:include="include/bootstrap.html"></th:block>
+</head>
+<body class="bg-secondary text-white">
+<th:block th:include="include/header.html"></th:block>
+<h1 class="display-4 text-center mt-5" sec:authorize="hasAuthority('USER')">Your orders</h1>
+<h1 class="display-4 text-center mt-5" sec:authorize="hasAuthority('ADMIN')">Active orders</h1>
+<div class="list-group container w-75 mt-5" th:each="order : ${orders}">
+    <div class="list-group-item list-group-item-action flex-column align-items-start bg-dark text-white border border-success">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" th:utext="${order.product.name}"></h5>
+            <small class="text-muted" th:text="${#dates.format(order.creationDate, 'dd-MMM-yyyy')}"></small>
+        </div>
+        <p class="mb-1" th:utext="'Size: ' + ${order.product.size}"></p>
+        <p class="mb-1" th:utext="'Contact number:' + ${order.user.phoneNumber}"></p>
+        <th:block sec:authorize="hasAuthority('ADMIN')">
+            <form method="post" th:action="@{/admin/submit_order}">
+                <input type="number" name="orderId" th:value="${order.id}" hidden readonly>
+                <button class="btn btn-success" type="submit">Submit order</button>
+            </form>
+            <form method="post" th:action="@{/admin/decline_order}">
+                <input type="number" name="orderId" th:value="${order.id}" hidden readonly>
+                <button class="btn btn-danger" type="submit">Decline order</button>
+            </form>
+        </th:block>
+    </div>
+</div>
+</body>
+<th:block th:include="include/footer.html"></th:block>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="${product.name}"></title>
+    <th:block th:include="include/bootstrap.html"></th:block>
+</head>
+<body class="bg-secondary" style="height: 100vh; width: 100%">
+<th:block th:include="include/header.html"></th:block>
+<form class="card container mt-5 bg-dark text-white border border-success rounded" th:action="@{/orders/add}"
+      method="post">
+    <div class="card-body">
+        <h5 class="card-title" th:utext="${product.name}"></h5>
+        <p class="card-text" th:utext="${product.description}"></p>
+    </div>
+    <ul class="list-group list-group-flush bg-dark mb-5">
+        <li class="list-group-item bg-dark border border-success rounded" th:utext="'Size:' + ${product.size}"></li>
+        <li class="list-group-item bg-dark border border-success rounded"
+            th:utext="'Season: ' + ${product.seasonType.name()}"></li>
+        <li class="list-group-item bg-dark border border-success rounded"
+            th:utext="'Brand: ' + ${product.brand.name}"></li>
+    </ul>
+    <th:block sec:authorize="hasAuthority('USER')">
+        <div class="mb-5">
+            <input name="productId" hidden readonly th:value="${product.id}" th:name="productId">
+            <input type="text" hidden readonly th:value="${user.login}" th:name="username">
+            <input sec:authorize="hasAuthority('USER')" type="submit" class="btn btn-success" value="Make order">
+        </div>
+    </th:block>
+</form>
+</body>
+<th:block th:include="include/footer.html"></th:block>
+</html>

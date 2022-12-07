@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+    <th:block th:include="include/bootstrap.html"></th:block>
+</head>
+<body class="bg-secondary text-white">
+<th:block th:include="include/header.html"></th:block>
+<h1 class="display-4 text-center mt-5">Adding a new product</h1>
+<!--enctype="application/x-www-form-urlencoded"-->
+<form action="#" th:action="@{/admin/add_product}" enctype="multipart/form-data" th:object="${product}"
+      method="post"
+      class="container w-50 bg-dark border border-success p-5 mt-5 rounded opacity-50">
+    <div class="form-group">
+        <label for="productNameInput">Product name: </label>
+        <input type="text" th:field="*{name}" name="name" class="form-control bg-dark text-white border-success"
+               id="productNameInput" required>
+    </div>
+    <div class="form-group">
+        <label for="productDescriptionInput">Product description</label>
+        <textarea th:field="*{description}" name="description" class="form-control bg-dark text-white border-success"
+                  minlength="1" maxlength="255" rows="5" id="productDescriptionInput" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="productPriceInput">Price:</label>
+        <input th:field="*{price}" name="price" class="form-control bg-dark text-white border" id="productPriceInput"
+               type="number" step="0.1" min="0" required>
+    </div>
+    <div class="form-group">
+        <label for="brandSelect">Brand:</label>
+        <select class="form-control bg-dark text-white border-success" name="brandId" id="brandSelect" required>
+            <th:block th:each="brand : ${brands}">
+                <option th:value="${brand.id}" th:utext="${brand.name}" name="brandId"></option>
+            </th:block>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="productSeasonInput">Season:</label>
+        <select th:field="*{seasonType}" class="form-control bg-dark text-white" name="productSeason"
+                id="productSeasonInput" required>
+            <option value="WINTER">Winter</option>
+            <option value="SPRING">Spring</option>
+            <option value="SUMMER">Summer</option>
+            <option value="AUTUMN">Autumn</option>
+            <option value="DEMO">Demo</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="productSizeInput">Size:</label>
+        <input class="form-control bg-dark text-white" id="productSizeInput" type="number" min="0" max="55"
+               th:field="*{size}" required>
+    </div>
+    <input type="submit" class="btn btn-success" value="Send">
+</form>
+</body>
+<th:block th:include="include/footer.html"></th:block>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Sneakers</title>
+    <th:block th:include="include/bootstrap.html"></th:block>
+</head>
+<body class="bg-secondary">
+<th:block th:include="include/header.html"></th:block>
+<form action="#" class="container w-50 mt-4" th:action="@{/find_products}" method="get">
+    <div class="form-row w-100">
+        <div class="col-5">
+            <select class="form-select form-select-lg mb-3 w-100 bg-dark text-white p-2 rounded border-success"
+                    aria-label=".form-select-lg example" name="brandId">
+                <th:block th:each="brand : ${brands}">
+                    <option th:value="${brand.id}" th:utext="${brand.name}" name="brandId"></option>
+                </th:block>
+            </select>
+        </div>
+        <div class="col-5 ">
+            <select class="form-select form-select-lg mb-3 w-100 bg-dark text-white p-2 rounded border-success"
+                    aria-label=".form-select-lg example" name="seasonType">
+                <option value="WINTER">Winter</option>
+                <option value="AUTUMN">Autumn</option>
+                <option value="SUMMER">Summer</option>
+                <option value="SPRING">Spring</option>
+                <option value="DEMO">Demo</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-outline-success my-2 my-sm-0 w-100 bg-dark" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+<th:block th:each="product : ${products}">
+    <div class="container text-white">
+        <div class="row">
+            <div href="#"
+                 class="card bg-dark container justify-content-center border border-success rounded shadow-sm mt-3 link-success"
+                 style="width: 75%;">
+                <div class="row g-0">
+                    <div class="col-md-4" style="max-width: 250px; max-height: 250px">
+                        <a href="#" th:href="@{'/products/' + ${product.id}}">
+                            <img src="img.png" alt="img.png" class="img-fluid rounded-start border-success m-3 rounded">
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title" th:utext="${product.name}"></h5>
+                            <p class="card-text" th:utext="${product.description}"></p>
+                            <p class="card-text" th:utext="'Price: ' + ${product.price} + ' $'"></p>
+                            <p class="card-text" th:utext="'Size:' + ${product.size}"></p>
+                        </div>
+                    </div>
+                    <th:block sec:authorize="hasAuthority('ADMIN')">
+                        <div class="m-3">
+                            <a th:href="@{'/admin/edit_product/' + ${product.id}}" class="btn btn-success">Edit</a>
+                            <form th:action="@{'/admin/delete_product/' + ${product.id}}" th:method="post">
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+<th:block th:include="include/footer.html"></th:block>
+</html>

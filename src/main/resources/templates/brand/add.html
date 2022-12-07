@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add brand</title>
+    <th:block th:include="include/bootstrap.html"></th:block>
+</head>
+<th:block th:include="include/header.html"></th:block>
+<body class="bg-secondary text-white">
+<h1 class="display-4 text-center mt-5">Adding a new brand</h1>
+<form class="container bg-dark text-white p-5 mt-5 border border-success rounded w-50" th:action="@{/admin/add_brand}"
+      th:entity="${brand}" method="post">
+    <div class="form-group">
+        <label for="name">Enter name of new brand:</label>
+        <input type="text" name="name" id="name" class="form-control" minlength="1" maxlength="255"
+               th:field="*{brand.name}">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</body>
+<th:block th:include="include/footer.html"></th:block>
+</html>
