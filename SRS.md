@@ -19,6 +19,22 @@ Web-приложение Online Sneakers Auction. Online Sneakers Auction - эт
 Серверная часть приложения должна быть реализована с помощью Java 17 и Spring Framework.
 Клиентская часть приложения должна быть создана с использованием HTML, CSS и опционально JavaScript
 ## 2.2 Интерфейс пользователя
+### 2.2.1 Главная страница
+![image](https://user-images.githubusercontent.com/70900496/206156511-3e372563-ece9-46ea-92bc-04548626eed8.png)
+### 2.2.2 Страница просмотра товаров
+![image](https://user-images.githubusercontent.com/70900496/206156707-ffb04789-f8c6-481f-af29-7aaa38e6fcb2.png)
+### 2.2.3 Страница авторизации
+![image](https://user-images.githubusercontent.com/70900496/206156853-15ce0a2e-2baf-40cc-941d-4d836ebcf1b4.png)
+### 2.2.4 Страница регистрации
+![image](https://user-images.githubusercontent.com/70900496/206156964-d328609d-6d23-4321-bd4d-fa241e41ea55.png)
+### 2.2.5 Страница просмотра заказов пользователя
+![image](https://user-images.githubusercontent.com/70900496/206157224-af3cd04d-a3dd-45a9-a22a-cfa9960035c5.png)
+### 2.2.6 Страница просмотра активных заказов со стороны администратора
+![image](https://user-images.githubusercontent.com/70900496/206157439-fffa11b0-97a4-4634-8ea4-2c30ab774112.png)
+### 2.2.7 Страница добавления нового товара
+![image](https://user-images.githubusercontent.com/70900496/206157732-fa1cde97-0c45-4d81-823d-c2eaa272c0a6.png)
+### 2.2.8 Страница добавления нового бренда
+![image](https://user-images.githubusercontent.com/70900496/206157849-9b1fe436-65e5-432c-aa46-084d7368cca9.png)
 ## 2.3 Характеристики пользователя
 Пользователь приложения - любой человек, которых хочет купить обувь какого-либо бренда.
 Это человек возрастной категории 18+, который обладает минимальной технической грамотностью и минимальными навыками использования интернета.
