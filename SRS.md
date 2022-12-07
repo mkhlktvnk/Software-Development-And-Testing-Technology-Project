@@ -19,22 +19,23 @@ Web-приложение Online Sneakers Auction. Online Sneakers Auction - эт
 Серверная часть приложения должна быть реализована с помощью Java 17 и Spring Framework.
 Клиентская часть приложения должна быть создана с использованием HTML, CSS и опционально JavaScript
 ## 2.2 Интерфейс пользователя
+В мокапах представлена общая структура страниц приложения. Отенки цветов и шрифты могут быть опционально изменены по усмотрению дизайнера/разработчика.
 ### 2.2.1 Главная страница
-![image](https://user-images.githubusercontent.com/70900496/206156511-3e372563-ece9-46ea-92bc-04548626eed8.png)
+![Без имени-1](https://user-images.githubusercontent.com/70900496/206191027-1e06cbed-c89c-410f-9b1f-d24b65f8401e.png)
 ### 2.2.2 Страница просмотра товаров
-![image](https://user-images.githubusercontent.com/70900496/206156707-ffb04789-f8c6-481f-af29-7aaa38e6fcb2.png)
+![image](https://user-images.githubusercontent.com/70900496/206192144-cb2d26bf-0a9e-45a8-8d42-88c5fe5d1076.png)
 ### 2.2.3 Страница авторизации
-![image](https://user-images.githubusercontent.com/70900496/206156853-15ce0a2e-2baf-40cc-941d-4d836ebcf1b4.png)
+![image](https://user-images.githubusercontent.com/70900496/206192801-5294c093-4ccc-4571-8e20-15c68fc4396b.png)
 ### 2.2.4 Страница регистрации
-![image](https://user-images.githubusercontent.com/70900496/206156964-d328609d-6d23-4321-bd4d-fa241e41ea55.png)
+![image](https://user-images.githubusercontent.com/70900496/206193147-850b05c6-a92c-4c8a-8205-6d57a12f39de.png)
 ### 2.2.5 Страница просмотра заказов пользователя
-![image](https://user-images.githubusercontent.com/70900496/206157224-af3cd04d-a3dd-45a9-a22a-cfa9960035c5.png)
+![image](https://user-images.githubusercontent.com/70900496/206193808-6070c86e-3f13-490c-982e-76cf1817fad6.png)
 ### 2.2.6 Страница просмотра активных заказов со стороны администратора
-![image](https://user-images.githubusercontent.com/70900496/206157439-fffa11b0-97a4-4634-8ea4-2c30ab774112.png)
+![image](https://user-images.githubusercontent.com/70900496/206195074-6e1c044b-c3a5-46d1-b457-849c24f6ff37.png)
 ### 2.2.7 Страница добавления нового товара
-![image](https://user-images.githubusercontent.com/70900496/206157732-fa1cde97-0c45-4d81-823d-c2eaa272c0a6.png)
+![image](https://user-images.githubusercontent.com/70900496/206196037-d0093f04-38bd-42eb-87ff-65917995a8cc.png)
 ### 2.2.8 Страница добавления нового бренда
-![image](https://user-images.githubusercontent.com/70900496/206157849-9b1fe436-65e5-432c-aa46-084d7368cca9.png)
+![image](https://user-images.githubusercontent.com/70900496/206196367-a8eb1180-8b4d-4802-a6ed-3c1c56d99d83.png)
 ## 2.3 Характеристики пользователя
 Пользователь приложения - любой человек, которых хочет купить обувь какого-либо бренда.
 Это человек возрастной категории 18+, который обладает минимальной технической грамотностью и минимальными навыками использования интернета.
